@@ -13,11 +13,33 @@
 
 // Change these to an object of Arrays maybe?
 
-const special = "!@#$%^&*(){}[]=<>/,.";
-let charCount = 0;
+
+
+const symbols = "!@#$%^&*(){}[]=<>/,.";
+
+const functionObject = {
+  lower: function getLowerCase() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  },
+  upper: function getUpperCase() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  },
+  number: function getNumeric() {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  },
+  special: function getSpecial() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  }
+}
+
+console.log(functionObject.lower());
+console.log(functionObject.upper());
+console.log(functionObject.number());
+console.log(functionObject.special());
+
 
 function generatePassword() {
-  let passwordLength = prompt("How many characters do you want your password to include? Please enter a number.");
+  let passwordLength = +prompt("How many characters do you want your password to include? Please enter a number.");
 
   let lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
 
@@ -25,52 +47,38 @@ function generatePassword() {
 
   let numeric = confirm("Click OK to confirm that you would like numbers included in your password.");
 
-  let special = confirm("Click OK to confirm that you would like special characters included in your password.");
+  let specialChar = confirm("Click OK to confirm that you would like special characters included in your password.");
+
 
   console.log(passwordLength);
+  console.log(typeof passwordLength);
   console.log(lowerCase);
   console.log(upperCase);
   console.log(numeric);
-  console.log(special);
+  console.log(specialChar);
 
-  for(var i=0; i <= passwordLength; i++);
-  
-  if (lowerCase) {
+  let workingPassword = " ";
 
-    function getLowerCase() {
-      return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-      console.log(lowerString);
-  }
 
-  if (upperCase) {
+  for(var i=0; i <= passwordLength; i++) {
 
-    function getUpperCase() {
-      return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+    if (lowerCase) {
+
     }
   }
   
-  if (numeric) {
+    
+} 
 
-    function getNumeric() {
-      return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-    }
-  }
+    
+  
+    
+//   return newpassword;
 
-  if (special) {
-
-    function getSpecial() {
-      return String.fromCharCode(Math.floor(Math.random() * special.length));
-    }
-  }
-
-
-    let newPassword = "";
    
-  }
+//   }
 
-}
 
-  // return newpassword;
 
 
 
