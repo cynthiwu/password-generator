@@ -57,20 +57,47 @@ function generatePassword() {
   console.log(numeric);
   console.log(specialChar);
 
-  let workingPassword = " ";
+  let charCount = 0;
+  function addOne() {
+    charCount + 1;
+  }
+
+  // CharCount not working. Tomorrow, try doing another for loop.
+  
+  let newPassword = "";
 
 
-  for(var i=0; i <= passwordLength; i++) {
+  while (newPassword.length < passwordLength) {
 
     if (lowerCase) {
-
+      var assignedLower = functionObject.lower();
+      addOne();
+      newPassword += assignedLower;
     }
-  }
-  
-    
-} 
 
+    if (upperCase) {
+      var assignedUpper = functionObject.upper();
+      addOne();
+      newPassword += assignedUpper;
+    }
     
+    if (numeric) {
+      var assignedNumeric = functionObject.number();
+      addOne();
+      newPassword += assignedNumeric;
+    }
+
+    if (specialChar) {
+      var assignedSpecial = functionObject.special();
+      addOne();
+      newPassword += assignedSpecial;
+    }
+
+  }
+
+  return newPassword
+
+}
   
     
 //   return newpassword;
