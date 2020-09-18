@@ -39,16 +39,34 @@ console.log(functionObject.special());
 
 
 function generatePassword() {
-  let passwordLength = +prompt("How many characters do you want your password to include? Please enter a number.");
 
-  let lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
+var verified = false
 
-  let upperCase = confirm("Click OK to confirm that you would like uppercase letters included in your password.");
+while (verified === false) {
 
-  let numeric = confirm("Click OK to confirm that you would like numbers included in your password.");
+  var passwordLength = +prompt("How many characters do you want your password to include? Please enter a number between 8 and 128.").trim();
 
-  let specialChar = confirm("Click OK to confirm that you would like special characters included in your password.");
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Invalid entry. Your password must contain between 8 and 128 characters.")
+  }
 
+  else if (isNaN(passwordLength) === true) {
+    alert("Invalid entry. Your answer must be a number.")
+  }
+
+  else {
+    verified = true;
+  }
+
+}
+
+  var lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
+
+  var upperCase = confirm("Click OK to confirm that you would like uppercase letters included in your password.");
+
+  var numeric = confirm("Click OK to confirm that you would like numbers included in your password.");
+
+  var specialChar = confirm("Click OK to confirm that you would like special characters included in your password.");
 
   console.log(passwordLength);
   console.log(typeof passwordLength);
@@ -57,7 +75,6 @@ function generatePassword() {
   console.log(numeric);
   console.log(specialChar);
 
- 
   var newPassword = "";
   var charCount = 0;
 
@@ -91,13 +108,13 @@ function generatePassword() {
       newPassword += "";
     }
 
-
   }
   
   return newPassword.slice(0, passwordLength);
-
-}
   
+}
+
+
 
 
 ///////////////////////////////////////////////////////////////////////
