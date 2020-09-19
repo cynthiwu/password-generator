@@ -1,21 +1,11 @@
-///////////////////////////////////////////////////////////////////////
-// PASSWORD GENERATOR
-//
-// * For this assignment, you will not be changing the HTML and CSS at all.
-//
-// * You will need a generatePassword function is called when the user
-//   clicks the Generate Password button.
-//
-// * You can create other functions that are called from within
-//   generatePassword
-//
-// * Gather user input with prompt's and confirm's
-
-// Change these to an object of Arrays maybe?
 
 
+// Special variable to house the special symbols. 
 
 const symbols = "!@#$%^&*(){}[]=<>/,.";
+
+
+// Organized the methods for obtaining random characters for easy reference. 
 
 const functionObject = {
   lower: function getLowerCase() {
@@ -38,11 +28,15 @@ console.log(functionObject.number());
 console.log(functionObject.special());
 
 
+// Function for generating the password. 
+
 function generatePassword() {
 
-var verified = false
+// Prompt to obtain the user's desired password lenth. Loop to ensure the user input is a valid number within a designation range (i.e., between 8 and 128) and not any other character. 
 
-while (verified === false) {
+  var verified = false
+
+  while (verified === false) {
 
   var passwordLength = +prompt("How many characters do you want your password to include? Please enter a number between 8 and 128.").trim();
 
@@ -58,7 +52,9 @@ while (verified === false) {
     verified = true;
   }
 
-}
+  }
+
+  // Prompts to verify if user would like to include lowercase letters, uppercase letters, numbers, and special characters.
 
   var lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
 
@@ -75,8 +71,12 @@ while (verified === false) {
   console.log(numeric);
   console.log(specialChar);
 
+  // Setting a starting variable to store random characters and to determine whether or not we are meeting the user's desired character length.
+
   var newPassword = "";
   var charCount = 0;
+
+  // Loop to add random characters to the newPassword variable if confirmed by the user.
 
   while (charCount < passwordLength) {
 
@@ -114,17 +114,7 @@ while (verified === false) {
   
 }
 
-
-
-
 ///////////////////////////////////////////////////////////////////////
-// DO NOT TOUCH THIS CODE
-//
-// This code handles:
-// * clicking the Generate Password
-// * writing the password to the screen
-//
-
 
 var generateBtn = document.querySelector("#generate");
 
@@ -138,7 +128,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 
   
