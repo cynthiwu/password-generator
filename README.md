@@ -14,7 +14,7 @@ View it live on [github-pages](https://cynthiwu.github.io/password-generator/)
 
 The goal of this project was to create a simple browser application that generates a random password based on user criteria. The UI leverages HTML and CSS and is powered by Javascript. 
 
-![Project Snapshot](assets/03-javascript-homework-demo.png)
+![Project Snapshot](./Assets/03-javascript-homework-demo.png)
 
 ### Acceptance Criteria
 
@@ -43,7 +43,7 @@ This project can be used by anyone who wishes to generate random passwords to pr
 
 Watch the gif below to see how to select password criteria and generate a random password.  
 
-![Password Generator Demo](assets/demo.gif)
+![Password Generator Demo](./Assets/demo.gif)
 
 
 ### Built With
