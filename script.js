@@ -34,35 +34,41 @@ function generatePassword() {
 
 // Prompt to obtain the user's desired password lenth. Loop to ensure the user input is a valid number within a designation range (i.e., between 8 and 128) and not any other character. 
 
-  var verified = false
+  var verified = false;
 
   while (verified === false) {
+    var passwordLength = +prompt("How many characters do you want your password to include? Please enter a number between 8 and 128.").trim();
 
-  var passwordLength = +prompt("How many characters do you want your password to include? Please enter a number between 8 and 128.").trim();
-
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Invalid entry. Your password must contain between 8 and 128 characters.")
-  }
-
-  else if (isNaN(passwordLength) === true) {
-    alert("Invalid entry. Your answer must be a number.")
-  }
-
-  else {
-    verified = true;
-  }
+    if (passwordLength < 8 || passwordLength > 128) {
+     alert("Invalid entry. Your password must contain between 8 and 128 characters.")
+    }
+    else if (isNaN(passwordLength) === true) {
+      alert("Invalid entry. Your answer must be a number.")
+    }
+    else {
+      verified = true;
+    }
 
   }
 
   // Prompts to verify if user would like to include lowercase letters, uppercase letters, numbers, and special characters.
 
-  var lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
+  let characterConfirm = false;
 
-  var upperCase = confirm("Click OK to confirm that you would like uppercase letters included in your password.");
+  while (characterConfirm === false) {
+    var lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
+    var upperCase = confirm("Click OK to confirm that you would like uppercase letters included in your password.");
+    var numeric = confirm("Click OK to confirm that you would like numbers included in your password.");
+    var specialChar = confirm("Click OK to confirm that you would like special characters included in your password.");
 
-  var numeric = confirm("Click OK to confirm that you would like numbers included in your password.");
+    if (lowerCase === false && upperCase === false && numeric === false || specialChar === false) {
 
-  var specialChar = confirm("Click OK to confirm that you would like special characters included in your password.");
+      alert("You must confirm at least one character type to be included in your password");
+    }
+    else {
+    characterConfirm = true;
+    }
+  }
 
   console.log(passwordLength);
   console.log(typeof passwordLength);
