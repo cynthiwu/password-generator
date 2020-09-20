@@ -48,9 +48,7 @@ Watch the gif below to see how to select password criteria and generate a random
 
 ### Built With
 
-* This project was built using [Bootstrap](https://getbootstrap.com/).
-* HTML code was validated using the [W3C Markup Validation Service](https://validator.w3.org/).
-
+* This project was built using HTML, CSS, and Javascript.
 
 ## Contributing
 
