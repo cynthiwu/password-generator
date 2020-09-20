@@ -8,6 +8,11 @@ View it live on [github-pages](https://cynthiwu.github.io/password-generator/)
 - [About The Project](#about-the-project)
   - [Acceptance Criteria](#acceptance-criteria)
   - [The JavaScript](#the-javascript) 
+- [Usage](#usage)
+  - [Demo](#demo)
+- [Built With](#built-with)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
 
 ## About The Project
@@ -30,7 +35,7 @@ The below were the acceptance criteria for this project:
 My approach to writing the JavaScript for this project is outlined below.
 
 *  I created a set of functions/methods to randomly select characters based on user criteria. These functions utilize the Math.random function and the ASCII table, pulling random symbols based on range size and placement in the table. This excludes the special symbol generator, which pulls randomly from the symbols variable I created. 
-* Within the generatePassword function, I started by asking the user to verify their password criteria with a a prompt and set of confirmations. I looped the prompt and confirmation variables to ensure that the user's responses were within predetermined limits. 
+* Within the generatePassword function, I started by asking the user to verify their password criteria with a prompt and set of confirmations. I looped the prompt and confirmation variables to ensure that the user's responses were within predetermined limits. 
 * To generate the password, I first created an empty password variable to store the working string (i.e., newPassword) and a charCount variable to ensure we hit the user's desired passwordLength.
 * To push the characters to the newPassword variable, I created a loop which calls a character generating function based on the user's criteria. The random character generated was then added to the newPassword string and a counter number to the charCount. The charCount ensures that we at least hit the mininum number of characters selected by the user. 
 * The final step was to slice the newPassword to fit the passwordLength. This method ensures that we have included at least one character for all character types selected by the user. 
@@ -46,7 +51,7 @@ Watch the gif below to see how to select password criteria and generate a random
 ![Password Generator Demo](./Assets/demo.gif)
 
 
-### Built With
+## Built With
 
 * This project was built using HTML, CSS, and Javascript.
 
