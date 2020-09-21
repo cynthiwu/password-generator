@@ -53,7 +53,7 @@ function generatePassword() {
 
   // Prompts to verify if user would like to include lowercase letters, uppercase letters, numbers, and special characters.
 
-  let characterConfirm = false;
+  var characterConfirm = false;
 
   while (characterConfirm === false) {
     var lowerCase = confirm("Click OK to confirm that you would like lowercase letters included in your password.");
