@@ -36,9 +36,9 @@ My approach to writing the JavaScript for this project is outlined below.
 
 *  I created a set of functions/methods to randomly select characters based on user criteria. These functions utilize the Math.random function and the ASCII table, pulling random symbols based on range size and placement in the table. This excludes the special symbol generator, which pulls randomly from the symbols variable I created. 
 * Within the generatePassword function, I started by asking the user to verify their password criteria with a prompt and set of confirmations. I looped the prompt and confirmation variables to ensure that the user's responses were within predetermined limits. 
-* To generate the password, I first created an empty password variable to store the working string (i.e., newPassword) and a charCount variable to ensure we hit the user's desired passwordLength.
-* To push the characters to the newPassword variable, I created a loop which calls a character generating function based on the user's criteria. The random character generated was then added to the newPassword string and a counter number to the charCount. The charCount ensures that we at least hit the mininum number of characters selected by the user. 
-* The final step was to slice the newPassword to fit the passwordLength. This method ensures that we have included at least one character for all character types selected by the user. 
+* To generate the password, I first created an empty password array to store the working characters (i.e., newPassword) and a charCount variable to ensure we hit the user's desired passwordLength.
+* To push the characters to the newPassword array, I created a loop which calls a character generating function based on the user's criteria. The random character generated was then pushed to the end of the newPassword array, and a counter number to the charCount. The charCount ensures that we at least hit the mininum number of characters selected by the user. 
+* To full randomize the password, I utilized the Fisher-Yates method of shuffling variables in the newPassword arraym and then joined these variables into a string, to return the final password via the newPass variable. 
 
 ## Usage
 

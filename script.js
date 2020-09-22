@@ -124,6 +124,8 @@ function generatePassword() {
     }
   }
   
+  // Shuffling the characters using Fisher-Yates method
+
   for (let i = newPassword.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     var temp = newPassword[i];
@@ -137,7 +139,6 @@ function generatePassword() {
   var newPass = newPassword.join("");
 
   return newPass; 
-  // return newPassword.slice(0, passwordLength);
   
 }
 
