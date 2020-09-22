@@ -79,44 +79,65 @@ function generatePassword() {
 
   // Setting a starting variable to store random characters and to determine whether or not we are meeting the user's desired character length.
 
-  var newPassword = "";
+  var newPassword = [];
   var charCount = 0;
 
   // Loop to add random characters to the newPassword variable if confirmed by the user.
 
   while (charCount < passwordLength) {
+    console.log("Hello");
 
     if (lowerCase) {
       var assignedLower = functionObject.lower();
-      newPassword += assignedLower;
+      newPassword.push(assignedLower);
       charCount++;
+      if (charCount === passwordLength) {
+        break;
+      }
     }
 
     if (upperCase) {
       var assignedUpper = functionObject.upper();
-      newPassword += assignedUpper;
+      newPassword.push(assignedUpper);
       charCount++;
+      if (charCount === passwordLength) {
+        break;
+      }
     }
   
     if (numeric) {
       var assignedNumeric = functionObject.number();
-      newPassword += assignedNumeric;
+      newPassword.push(assignedNumeric);
       charCount++;
+      if (charCount === passwordLength) {
+        break;
+      }
     }
   
     if (specialChar) {
       var assignedSpecial = functionObject.special();
-      newPassword += assignedSpecial;
+      newPassword.push(assignedSpecial);
       charCount++;
+      if (charCount === passwordLength) {
+        break;
+      }
     }
-
-    else {
-      newPassword += "";
-    }
+  }
+  
+  for (let i = newPassword.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = newPassword[i];
+    newPassword[i] = newPassword[j];
+    newPassword[j] = temp;
 
   }
   
-  return newPassword.slice(0, passwordLength);
+  console.log(newPassword);
+
+  var newPass = newPassword.join("");
+
+  return newPass; 
+  // return newPassword.slice(0, passwordLength);
   
 }
 
